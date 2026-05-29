@@ -1,3 +1,10 @@
+https://img.shields.io/badge/SPN_Cipher-16_Rounds-534AB7?style=for-the-badge&logoColor=white
+-https://img.shields.io/badge/HMAC--SHA3--512-Tamper_Proof-993C1D?style=for-the-badge&logoColor=white
+https://img.shields.io/badge/Key_Size-512_bit-7F77DD?style=for-the-badge&logoColor=white
+
+
+
+
 # 🔐 MHHS — Multi-layer Hybrid Hash Shield
 
 > **Custom encryption library** — layered AES-256 + ChaCha20 + custom SPN cipher.MHHS GAME LYER
