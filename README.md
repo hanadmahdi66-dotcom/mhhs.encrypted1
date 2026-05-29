@@ -1,6 +1,11 @@
-https://img.shields.io/badge/SPN_Cipher-16_Rounds-534AB7?style=for-the-badge&logoColor=white
--https://img.shields.io/badge/HMAC--SHA3--512-Tamper_Proof-993C1D?style=for-the-badge&logoColor=white
-https://img.shields.io/badge/Key_Size-512_bit-7F77DD?style=for-the-badge&logoColor=white
+![Version](https://img.shields.io/badge/MHHS-v1.0-7F77DD?style=for-the-badge&logo=shield&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-D4537E?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Active-1D9E75?style=for-the-badge)
+![Platform](https://img.shields.io/badge/Platform-Linux%20|%20Mac%20|%20Windows-888780?style=for-the-badge)
+
+---
+
 
 
 
