@@ -3,8 +3,6 @@
 ![License](https://img.shields.io/badge/License-MIT-D4537E?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Active-1D9E75?style=for-the-badge)
 ![Platform](https://img.shields.io/badge/Platform-Linux%20|%20Mac%20|%20Windows-888780?style=for-the-badge)
-![MHHS v1.0](https://img.shields.io/badge/MHHS-v1.0-7F77DD?style=for-the-badge&logoColor=white)
-
 ---
 
 
