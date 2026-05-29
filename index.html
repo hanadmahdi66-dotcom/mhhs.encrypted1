@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hanova</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       SCREEN 1 · SPLASH
+  ═══════════════════════════════════════════ -->
+  <div id="screen-splash" class="screen active">
+    <div class="splash-bg">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+    <div class="splash-content">
+      <div class="logo-mark">H</div>
+      <h1 class="splash-title">Welcome to<br /><span>Hanova</span></h1>
+      <p class="splash-sub">Elegance, reimagined.</p>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+    </div>
+    <footer class="splash-footer">Powered by <strong>MHHS GAME INC</strong></footer>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       SCREEN 2 · AUTH
+  ═══════════════════════════════════════════ -->
+  <div id="screen-auth" class="screen">
+    <div class="auth-bg">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+    </div>
+
+    <!-- Sign Up Panel -->
+    <div id="panel-signup" class="auth-panel active">
+      <div class="auth-logo">H</div>
+      <h2 class="auth-heading">Create Account</h2>
+      <p class="auth-sub">Begin your premium journey</p>
+
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" id="signup-name" placeholder="Your full name" autocomplete="off" />
+      </div>
+      <div class="form-group">
+        <label>Gmail Address</label>
+        <input type="email" id="signup-email" placeholder="you@gmail.com" autocomplete="off" />
+      </div>
+      <button class="btn-primary" onclick="handleSignUp()">Create Account</button>
+      <p class="auth-switch">Already have an account? <span onclick="switchPanel('login')">Log In</span></p>
+    </div>
+
+    <!-- Log In Panel -->
+    <div id="panel-login" class="auth-panel">
+      <div class="auth-logo">H</div>
+      <h2 class="auth-heading">Welcome Back</h2>
+      <p class="auth-sub">Continue your experience</p>
+
+      <div class="form-group">
+        <label>Gmail Address</label>
+        <input type="email" id="login-email" placeholder="you@gmail.com" autocomplete="off" />
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" id="login-password" placeholder="••••••••" />
+      </div>
+      <button class="btn-primary" onclick="handleLogIn()">Log In</button>
+      <p class="auth-switch">New here? <span onclick="switchPanel('signup')">Sign Up</span></p>
+    </div>
+
+    <footer class="splash-footer">Powered by <strong>MHHS GAME INC</strong></footer>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       SCREEN 3 · CHOOSE PLAN
+  ═══════════════════════════════════════════ -->
+  <div id="screen-plans" class="screen">
+    <div class="auth-bg">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+    </div>
+    <div class="plans-wrap">
+      <h2 class="plans-heading">Choose Your Plan</h2>
+      <p class="plans-sub">Select the experience that fits you</p>
+
+      <div class="plans-grid">
+
+        <!-- Free -->
+        <div class="plan-card" onclick="selectPlan('free','0','$0')">
+          <div class="plan-badge">Free</div>
+          <div class="plan-price">$0<span>/forever</span></div>
+          <ul class="plan-features">
+            <li>✦ Upload photos for AI analysis</li>
+            <li>✦ 20 uploads per day</li>
+            <li>✦ Eloquent AI responses</li>
+            <li>✦ History log</li>
+            <li class="muted">✗ Text input to AI</li>
+            <li class="muted">✗ Priority support</li>
+          </ul>
+          <button class="btn-plan">Get Started</button>
+        </div>
+
+        <!-- Basic -->
+        <div class="plan-card featured" onclick="selectPlan('basic','0.99','$0.99/month')">
+          <div class="plan-ribbon">Popular</div>
+          <div class="plan-badge">Basic</div>
+          <div class="plan-price">$0.99<span>/month</span></div>
+          <ul class="plan-features">
+            <li>✦ Everything in Free</li>
+            <li>✦ Send text to AI</li>
+            <li>✦ 100 uploads per day</li>
+            <li>✦ Priority responses</li>
+            <li>✦ Export history</li>
+            <li class="muted">✗ Exclusive insights</li>
+          </ul>
+          <button class="btn-plan accent">Choose Basic</button>
+        </div>
+
+        <!-- Pro -->
+        <div class="plan-card" onclick="selectPlan('pro','1.5','$1.50/month')">
+          <div class="plan-badge">Pro</div>
+          <div class="plan-price">$1.50<span>/month</span></div>
+          <ul class="plan-features">
+            <li>✦ Everything in Basic</li>
+            <li>✦ Unlimited uploads</li>
+            <li>✦ Advanced AI model</li>
+            <li>✦ Exclusive insights</li>
+            <li>✦ Priority support</li>
+            <li class="muted">✗ White-glove onboarding</li>
+          </ul>
+          <button class="btn-plan">Choose Pro</button>
+        </div>
+
+        <!-- Elite -->
+        <div class="plan-card" onclick="selectPlan('elite','2','$2/month')">
+          <div class="plan-badge elite-badge">Elite</div>
+          <div class="plan-price">$2.00<span>/month</span></div>
+          <ul class="plan-features">
+            <li>✦ Everything in Pro</li>
+            <li>✦ White-glove onboarding</li>
+            <li>✦ Dedicated AI persona</li>
+            <li>✦ Custom branding</li>
+            <li>✦ Team access (3 seats)</li>
+            <li>✦ Early feature access</li>
+          </ul>
+          <button class="btn-plan">Choose Elite</button>
+        </div>
+
+      </div>
+    </div>
+    <footer class="splash-footer">Powered by <strong>MHHS GAME INC</strong></footer>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       SCREEN 4 · PAYMENT
+  ═══════════════════════════════════════════ -->
+  <div id="screen-payment" class="screen">
+    <div class="auth-bg">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+    </div>
+    <div class="payment-wrap">
+      <div class="payment-icon">💳</div>
+      <h2 class="plans-heading">Complete Payment</h2>
+      <p class="plans-sub">Send your payment via <strong>Zaad</strong></p>
+
+      <div class="payment-card">
+        <div class="payment-row">
+          <span>Plan</span><span id="pay-plan-name">—</span>
+        </div>
+        <div class="payment-row">
+          <span>Amount</span><span id="pay-amount">—</span>
+        </div>
+        <div class="payment-row">
+          <span>Send to</span><span>+252 633 718 556</span>
+        </div>
+      </div>
+
+      <div class="zaad-reminder">
+        <span class="zaad-icon">📲</span>
+        Send the following code via <strong>Zaad</strong>
+      </div>
+
+      <div class="zaad-code-wrap">
+        <code id="zaad-code">2200633718556*0#</code>
+        <button class="btn-copy" onclick="copyZaadCode()" id="copy-btn">Copy</button>
+      </div>
+
+      <button class="btn-primary" onclick="confirmPayment()" style="margin-top:1.5rem">I've Sent Payment</button>
+      <button class="btn-ghost" onclick="goToPlans()">← Change Plan</button>
+    </div>
+    <footer class="splash-footer">Powered by <strong>MHHS GAME INC</strong></footer>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       SCREEN 5 · HOME
+  ═══════════════════════════════════════════ -->
+  <div id="screen-home" class="screen">
+    <div class="home-bg">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+
+    <header class="home-header">
+      <div class="home-logo">H</div>
+      <div class="home-user-info">
+        <span id="home-greeting">Hello, User</span>
+        <span class="home-plan-badge" id="home-plan-tag">Free</span>
+      </div>
+      <button class="btn-icon" onclick="showScreen('screen-settings')" title="Settings">⚙</button>
+    </header>
+
+    <main class="home-main">
+      <div class="home-hero">
+        <h2 class="home-title">What would you<br /><em>like to explore?</em></h2>
+        <p class="home-desc" id="home-limit-notice"></p>
+      </div>
+
+      <!-- AI Feature Box -->
+      <div class="ai-box">
+        <div class="ai-tabs" id="ai-tabs">
+          <button class="ai-tab active" onclick="switchTab('photo')" id="tab-photo">📷 Photo</button>
+          <button class="ai-tab" onclick="switchTab('text')" id="tab-text">✏️ Text</button>
+        </div>
+
+        <!-- Photo Upload -->
+        <div id="ai-photo-panel" class="ai-panel active">
+          <label class="upload-zone" for="photo-input">
+            <div class="upload-icon">🖼</div>
+            <p>Tap to upload a photo</p>
+            <span>JPG, PNG, WEBP supported</span>
+          </label>
+          <input type="file" id="photo-input" accept="image/*" style="display:none" onchange="handlePhotoUpload(event)" />
+          <img id="photo-preview" class="photo-preview" src="" alt="" style="display:none" />
+        </div>
+
+        <!-- Text Input (premium only) -->
+        <div id="ai-text-panel" class="ai-panel">
+          <div id="text-locked-msg" class="locked-msg" style="display:none">
+            <span>🔒</span>
+            <p>Text input is available on <strong>Basic, Pro & Elite</strong> plans.</p>
+            <button class="btn-ghost-sm" onclick="goToPlans()">Upgrade Now</button>
+          </div>
+          <div id="text-input-wrap">
+            <textarea id="text-input" placeholder="Ask Hanova anything…" rows="4"></textarea>
+          </div>
+        </div>
+
+        <button class="btn-primary ai-submit" id="ai-submit-btn" onclick="submitToAI()">
+          ✦ Ask Hanova
+        </button>
+      </div>
+
+      <!-- AI Response -->
+      <div id="ai-response-wrap" class="ai-response-wrap" style="display:none">
+        <div class="response-label">Hanova says</div>
+        <div id="ai-response-text" class="ai-response-text"></div>
+        <div class="response-decor"></div>
+      </div>
+
+      <!-- Loading -->
+      <div id="ai-loading" class="ai-loading" style="display:none">
+        <div class="pulse-ring"></div>
+        <p>Hanova is thinking…</p>
+      </div>
+    </main>
+
+    <!-- Bottom Nav -->
+    <nav class="bottom-nav">
+      <button class="nav-btn active" onclick="setNav(this,'home-main')">
+        <span>✦</span><small>Home</small>
+      </button>
+      <button class="nav-btn" onclick="setNav(this,'screen-history'); showScreen('screen-history')">
+        <span>📜</span><small>History</small>
+      </button>
+      <button class="nav-btn" onclick="setNav(this,'screen-settings'); showScreen('screen-settings')">
+        <span>⚙</span><small>Settings</small>
+      </button>
+    </nav>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       SCREEN 6 · HISTORY
+  ═══════════════════════════════════════════ -->
+  <div id="screen-history" class="screen">
+    <div class="auth-bg"><div class="orb orb-1"></div></div>
+    <header class="inner-header">
+      <button class="back-btn" onclick="showScreen('screen-home')">←</button>
+      <h2>History</h2>
+    </header>
+    <div class="inner-content" id="history-list">
+      <div class="empty-state">
+        <div class="empty-icon">📜</div>
+        <p>No history yet.<br />Your AI conversations will appear here.</p>
+      </div>
+    </div>
+    <footer class="splash-footer">Powered by <strong>MHHS GAME INC</strong></footer>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       SCREEN 7 · SETTINGS
+  ═══════════════════════════════════════════ -->
+  <div id="screen-settings" class="screen">
+    <div class="auth-bg"><div class="orb orb-1"></div></div>
+    <header class="inner-header">
+      <button class="back-btn" onclick="showScreen('screen-home')">←</button>
+      <h2>Settings</h2>
+    </header>
+    <div class="inner-content settings-list">
+
+      <div class="settings-section">Profile</div>
+      <div class="settings-item">
+        <div class="settings-avatar" id="settings-avatar">H</div>
+        <div>
+          <div id="settings-name" class="settings-name">User</div>
+          <div id="settings-email" class="settings-email">—</div>
+        </div>
+      </div>
+      <div class="settings-item clickable" onclick="showCredits()">
+        <span>🏅</span> App Credits
+      </div>
+
+      <div class="settings-section">Account</div>
+      <div class="settings-item clickable" id="settings-plan-item">
+        <span>💎</span> Current Plan: <strong id="settings-plan-name">Free</strong>
+      </div>
+      <div class="settings-item clickable" onclick="goToPlans()">
+        <span>⬆</span> Upgrade Plan
+      </div>
+
+      <div class="settings-section">Legal</div>
+      <div class="settings-item clickable" onclick="showPrivacy()">
+        <span>🔒</span> Privacy &amp; Policy
+      </div>
+      <div class="settings-item clickable" onclick="showTerms()">
+        <span>📄</span> Terms of Service
+      </div>
+
+      <div class="settings-section">Danger Zone</div>
+      <div class="settings-item clickable danger" onclick="logOut()">
+        <span>🚪</span> Log Out
+      </div>
+
+    </div>
+    <footer class="splash-footer">Powered by <strong>MHHS GAME INC</strong></footer>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       OVERLAYS / POPUPS
+  ═══════════════════════════════════════════ -->
+
+  <!-- Waiting Popup -->
+  <div id="popup-waiting" class="popup-overlay" style="display:none">
+    <div class="popup-card">
+      <div class="popup-icon">⏳</div>
+      <h3>Payment Received</h3>
+      <p>Please wait <strong>2 – 5 minutes</strong> while we verify your payment and activate your plan.</p>
+      <div class="popup-loader"><div class="popup-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- Credits Popup -->
+  <div id="popup-credits" class="popup-overlay" style="display:none" onclick="closeCredits(event)">
+    <div class="popup-card credits-card">
+      <div class="credits-logo">H</div>
+      <h3>Hanova</h3>
+      <p class="credits-tagline">Elegance, Reimagined.</p>
+      <div class="credits-divider"></div>
+      <div class="credits-row"><span>Version</span><span>1.0.0</span></div>
+      <div class="credits-row"><span>Developer</span><span>MHHS GAME INC</span></div>
+      <div class="credits-row"><span>AI Powered by</span><span>Anthropic Claude</span></div>
+      <div class="credits-row"><span>Design</span><span>Luxury UI Studio</span></div>
+      <div class="credits-row"><span>Payment</span><span>Zaad Integration</span></div>
+      <div class="credits-divider"></div>
+      <p class="credits-copy">© 2025 MHHS GAME INC. All rights reserved.</p>
+      <button class="btn-ghost-sm" onclick="closeCredits()">Close</button>
+    </div>
+  </div>
+
+  <!-- Privacy Popup -->
+  <div id="popup-privacy" class="popup-overlay" style="display:none" onclick="closePopup('popup-privacy',event)">
+    <div class="popup-card legal-card">
+      <h3>Privacy &amp; Policy</h3>
+      <div class="legal-body">
+        <p><strong>Data Collection</strong><br/>Hanova collects only the information you provide (name, email) to personalise your experience. We do not sell your data.</p>
+        <p><strong>AI Uploads</strong><br/>Photos and text you submit are sent to our AI partner for processing and are not stored beyond the session.</p>
+        <p><strong>Payments</strong><br/>Payments are processed via Zaad. We do not store payment credentials.</p>
+        <p><strong>Contact</strong><br/>For questions, reach us at support@mhhsgame.com.</p>
+      </div>
+      <button class="btn-ghost-sm" onclick="closePopup('popup-privacy')">Close</button>
+    </div>
+  </div>
+
+  <!-- Terms Popup -->
+  <div id="popup-terms" class="popup-overlay" style="display:none" onclick="closePopup('popup-terms',event)">
+    <div class="popup-card legal-card">
+      <h3>Terms of Service</h3>
+      <div class="legal-body">
+        <p><strong>Usage</strong><br/>Hanova is a personal AI assistant. You agree not to use it for unlawful, harmful, or abusive purposes.</p>
+        <p><strong>Plans</strong><br/>Paid plans are billed monthly. Cancellation takes effect at the end of the billing period.</p>
+        <p><strong>Liability</strong><br/>MHHS GAME INC is not liable for AI-generated content inaccuracies. Use responses as guidance only.</p>
+        <p><strong>Modifications</strong><br/>We reserve the right to update these terms with reasonable notice.</p>
+      </div>
+      <button class="btn-ghost-sm" onclick="closePopup('popup-terms')">Close</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
