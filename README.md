@@ -1,6 +1,6 @@
 # 🔐 MHHS — Multi-layer Hybrid Hash Shield
 
-> **Custom encryption library** — layered AES-256 + ChaCha20 + custom SPN cipher.  
+> **Custom encryption library** — layered AES-256 + ChaCha20 + custom SPN cipher.MHHS GAME LYER
 > Simple API, military-grade protection.
 
 ---
@@ -9,7 +9,7 @@
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/YOUR_USERNAME/mhhs.git
+git clone https://github.com/hanadmahdi66-dotcom/mhhs.encrypted1.git
 cd mhhs
 
 # 2. Install dependency (only one)
@@ -146,13 +146,7 @@ mhhs.decrypt(token, wrong_key)
 
 ---
 
-## 📁 File Structure
 
-```
-mhhs/
-├── mhhs.py          ← the library (import this)
-├── README.md        ← you are here
-└── requirements.txt ← pip install -r requirements.txt
 ```
 
 ---
@@ -189,4 +183,4 @@ MIT — free to use, modify, and share.
 
 ---
 
-> Built with ❤️ — MHHS v1.0
+> Built with  — MHHS v1.0
