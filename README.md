@@ -125,26 +125,17 @@ print("msg:", m)        # → Lacagta waxay tahay $5,000
 
 ---
 
-## 🛡 Security Layers
+### 🛡 Encryption Layers
 
-```
-plaintext
-  └─ [L1] Key derivation   PBKDF2-SHA512 (400,000 iters) + HKDF-SHA3-512
-  └─ [L2] SPN cipher       16-round custom Substitution-Permutation Network
-  └─ [L3] ChaCha20         ChaCha20-Poly1305  (256-bit, AEAD)
-  └─ [L4] AES-256          AES-256-GCM        (256-bit, AEAD)
-  └─ [L5] MAC              HMAC-SHA3-512      (tamper detection)
-  └─ [L6] Envelope         Base85 + version header
-```
-
-| Property | Value |
-|----------|-------|
-| Key space | 2^512 effective |
-| Salt | 256-bit random (fresh per encryption) |
-| Nonces | 96-bit × 2 (never reused) |
-| Quantum resistance | 128-bit post-quantum (AES + ChaCha20) |
-| Timing attacks | `hmac.compare_digest` everywhere |
-| Padding oracle | None — AEAD only |
+![AES-256](https://img.shields.io/badge/AES--256--GCM-Military_Grade-E24B4A?style=for-the-badge&logoColor=white)
+![ChaCha20](https://img.shields.io/badge/ChaCha20--Poly1305-Google_Standard-0F6E56?style=for-the-badge&logoColor=white)
+![SPN](https://img.shields.io/badge/SPN_Cipher-16_Rounds-534AB7?style=for-the-badge&logoColor=white)
+![Layers](https://img.shields.io/badge/Encryption_Layers-6_Deep-BA7517?style=for-the-badge&logoColor=white)
+![Quantum](https://img.shields.io/badge/Quantum_Resistant-128bit_PostQ-185FA5?style=for-the-badge&logoColor=white)
+![HMAC](https://img.shields.io/badge/HMAC--SHA3--512-Tamper_Proof-993C1D?style=for-the-badge&logoColor=white)
+![PBKDF2](https://img.shields.io/badge/PBKDF2--SHA512-400K_iters-639922?style=for-the-badge&logoColor=white)
+![KeySize](https://img.shields.io/badge/Key_Size-512_bit-7F77DD?style=for-the-badge&logoColor=white)
+![Install](https://img.shields.io/badge/pip_install-cryptography-3776AB?style=for-the-badge&logo=python&logoColor=white)
 
 ---
 
